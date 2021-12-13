@@ -1,8 +1,8 @@
 {
     "DomainName": "${ES_DOMAIN_NAME}",
-    "ElasticsearchVersion": "${ES_VERSION}",
-    "ElasticsearchClusterConfig": {
-        "InstanceType": "r5.large.elasticsearch",
+    "EngineVersion": "${ES_VERSION}",
+    "ClusterConfig": {
+        "InstanceType": "r5.large.search",
         "InstanceCount": 1,
             "DedicatedMasterEnabled": false,
             "ZoneAwarenessEnabled": false,
@@ -10,7 +10,7 @@
         },
     "EBSOptions": {
         "EBSEnabled": true,
-        "VolumeType": "gp3",
+        "VolumeType": "gp2",
         "VolumeSize": 100
     },
     "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:${AWS_REGION}:${ACCOUNT_ID}:domain/${ES_DOMAIN_NAME}/*\"}]}",
